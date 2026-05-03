@@ -1,0 +1,21 @@
+name: safecpp Review
+
+on:
+  pull_request:
+    paths:
+      - '**/*.cpp'
+      - '**/*.hpp'
+      - '**/*.h'
+      - '**/*.cc'
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yssmansoor/safecpp-reviewer/.github/actions/safecpp@main
+        with:
+          checks: 'cppcoreguidelines-*,modernize-*,bugprone-*'
