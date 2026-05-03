@@ -9,6 +9,6 @@ public:
     }
     int read() {
         int* ptr = NULL;
-        return *(int*)0x1000;
+        return *(int*)0x2000;
     }
 };
